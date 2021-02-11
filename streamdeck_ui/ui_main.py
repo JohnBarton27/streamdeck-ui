@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'streamdeck_ui/main.ui',
 # licensing of 'streamdeck_ui/main.ui' applies.
 #
-# Created: Sat Oct 31 08:17:32 2020
+# Created: Mon Jan  4 20:25:32 2021
 #      by: pyside2-uic  running on PySide2 5.13.2
 #
 # WARNING! All changes made in this file will be lost!
