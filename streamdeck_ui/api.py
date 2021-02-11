@@ -402,11 +402,16 @@ def render() -> None:
             else:
                 image = _render_key_image(deck, **button_settings)
                 image_cache[key] = image
-            deck.set_key_image(button_id, image)
+
+            try:
+                deck.set_key_image(button_id, image)
+            except IndexError:
+                pass
 
 
 def _render_key_image(deck, icon: str = "", text: str = "", information: str = "", font: str = DEFAULT_FONT, **kwargs):
     """Renders an individual key image"""
+    text = str(text)
     image = ImageHelpers.PILHelper.create_image(deck)
     draw = ImageDraw.Draw(image)
 
@@ -414,7 +419,7 @@ def _render_key_image(deck, icon: str = "", text: str = "", information: str = "
 
     # Give information priority over text
     if information:
-        text = information
+        text = str(information)
 
     if icon:
         rgba_icon = Image.open(icon).convert("RGBA")

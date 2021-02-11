@@ -99,7 +99,7 @@ def redraw_buttons(ui) -> None:
         # Give "info" priority
         info = api.get_button_info(deck_id, _page(ui), button.index)
         if info:
-            button.setText(info)
+            button.setText(str(info))
             continue
 
         button.setText(api.get_button_text(deck_id, _page(ui), button.index))
